@@ -1,0 +1,261 @@
+body {
+    background-color: #ffffff;
+    width:100%;
+}
+
+a {
+    color: #111;
+    text-decoration: none;
+    background-color:transparent;
+}
+
+a:link {
+    color: #111;
+    text-decoration: none;
+    background-color:transparent;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #a6a6a6;
+}
+
+a:active {
+    text-decoration: none;
+    color: #111;
+}
+
+li a {
+    display: block;
+    font-weight: bold;
+    color: #000;
+    padding: 16px 5px 18px 10px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #d9d9d9;
+    color: black;
+}
+
+#encabezado {
+    text-decoration: none;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 140px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-align: center;
+}
+
+#subencabezado {
+    color: #111;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1px;
+    margin: 30px;
+    text-align: center;
+}
+
+#menu {
+    position : fixed;
+    border: 2px solid;
+    list-style-type: none;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 5px;
+    padding: 5px;
+    width: 150px;
+    background-color: #ffffff;
+}
+
+#wrapper {
+    min-height:100%;
+    position:relative;
+}
+
+#foot {
+    float: clear;
+    width: 100%;
+    bottom: 0;
+    top: 50px;
+    position: relative;
+    text-align: center;
+    font-family: "Lucida Console", Monaco, monospace;
+    color: #111;
+    font-weight: bold;
+    height:100px;
+}
+
+#sub {
+    color: #111;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: left;
+}
+#tabla{
+    font-family: 'Helvetica Neue', sans-serif;
+    text-align: left;
+    font-size: 1.2vw;
+    padding: 0px 0px 0px 100px;
+    color: black;
+}
+#contenido {
+    font-family: 'Helvetica Neue', sans-serif;
+    text-align: left;
+    font-size: 20px;
+    padding: 10px 190px 300px 200px;
+    color: black;
+}
+#input{
+    text-align: left;
+    font-size: 20px;
+    color: black;
+}
+
+#console{
+    position: absolute;
+    top: 260px;
+    right: 80px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.4vw;
+    color: #111;
+}
+
+table {
+    margin: 35px;
+    padding: 26px;
+    border-collapse: collapse;
+}
+
+tbody{
+    border: 1px black;
+}
+
+table td {
+    width: 90px;
+    height: 90px;
+    border: solid thin; 
+    height: 1.4em;
+    width: 1.4em;
+    text-align: center;
+    padding: 0;
+
+}
+
+td.invalid {
+    background-color: #ff8080;
+}
+
+td.valid{
+    background-color: #4dff4d;
+}
+
+td input {
+    position: relative;
+    line-height: 80px;
+    text-align: center;
+    font-size:32px;
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+    border: 0px solid; 
+
+}
+
+.tabla {
+    border: solid 5px black;
+}
+.arriba-derecha-izquierda {
+    border-top: solid 5px black;
+    border-right: solid 5px black;
+    border-left: solid 5px black;
+
+}
+
+.abajo-derecha-izquierda {
+    border-bottom: solid 5px black;
+    border-right: solid 5px black;
+    border-left: solid 5px black;
+}
+
+.izquierda-arriba-abajo{
+    border-left: solid 5px black;
+    border-top: solid 5px black;
+    border-bottom: solid 5px black;
+}
+
+.derecha-arriba-abajo {
+    border-right: solid 5px black;
+    border-top: solid 5px black;
+    border-bottom: solid 5px black;
+}
+
+
+.arriba-derecha {
+    border-top: solid 5px black;
+    border-right: solid 5px black;
+}
+
+.arriba-izquierda {
+    border-top: solid 5px black;
+    border-left: solid 5px black;
+}
+
+.abajo-derecha {
+    border-bottom: solid 5px black;
+    border-right: solid 5px black;
+}
+
+.abajo-izquierda {
+    border-bottom: solid 5px black;
+    border-left: solid 5px black;
+}
+
+.derecha-izquierda{
+    border-right: solid 5px black;
+    border-left: solid 5px black;
+}
+
+.arriba-abajo{
+    border-top: solid 5px black;
+    border-bottom: solid 5px black;
+}
+
+.operacion {
+    position: absolute;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    float: left;
+    font-size: 15px;
+    text-align: center;
+    font-family: Ariel;
+}
+
+.button {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    background-color: #111;
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 2px 2px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #808080;
+    color: white;
+}
+
+#log{
+    color:#ff8080;
+}

@@ -1,0 +1,53 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://agora.unileon.es"
+xmlns="http://agora.unileon.es"
+elementFormDefault="qualified">
+
+  <!-- Grupo de atributos para definir los límites en una casilla que enmarcan un poliminó en un solitario Kenken. Los bordes exteriores de un solitario kenken siempre forman parte de los límites de un poliminó -->
+  <xs:attributeGroup name="limitesPolimino">
+    <xs:attribute name="norte" type="xs:boolean"/>
+    <xs:attribute name="sur" type="xs:boolean"/>
+    <xs:attribute name="este" type="xs:boolean"/>
+    <xs:attribute name="oeste" type="xs:boolean"/>
+  </xs:attributeGroup>
+
+  <!-- Tipo auxiliar para combinar una restricción y atributos -->
+  <xs:simpleType name="expresionKenken">
+     <xs:restriction base="xs:token">
+      <xs:pattern value="[0-9]*[-+x÷]?"/>
+     </xs:restriction>
+  </xs:simpleType>
+  
+  <!-- Una casilla kenken puede contener una operación definida por un número positivo seguido de una operación, un valor solución  o puede estar vacía.
+       El atributo 'numero' de la casilla indica su posición dentro de la fila (comenzando en 1).
+  Los atributos del grupo 'limitesPolimino' definen si la casilla define algún límite para un poliminó. -->
+  <xs:complexType name="casillaKenken">
+      <xs:all>
+         <xs:element name="operacion" type="expresionKenken" minOccurs="0"/>
+         <xs:element name="solucion" type="xs:positiveInteger" minOccurs="0"/>
+      </xs:all>
+      <xs:attribute name="numero" type="xs:positiveInteger" use="required"/>
+      <xs:attributeGroup ref="limitesPolimino"/>
+   </xs:complexType>
+
+   <!-- Una fila kenken define las casillas con su contenido (todo optativo): número más operación y valor solución. Los atributos de casilla definen los límites de  los poliminós.
+	El atributo 'numero' de la fila indica su posición dentro del solitario kenken (comenzando en 1). -->
+   <xs:complexType name="filaKenken">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="casilla" type="casillaKenken"/>
+    </xs:sequence>
+    <xs:attribute name="numero" type="xs:positiveInteger" use="required"/>
+   </xs:complexType>
+
+   <!-- Un kenken viene definido por su tamaño, atributos 'filas' y 'columnas', y por las filas que contiene. Si una casilla no tiene contenido o no tiene ningún límite de un poliminó puede no aparecer en su fila. Si una fila no tiene ninguna casilla con contenido tampoco aparecerá en la definición del kenken. -->
+  <xs:element name="kenken">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element name="fila" type="filaKenken" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="filas" type="xs:positiveInteger" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

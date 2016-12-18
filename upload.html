@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>KenKen</title>
+        <meta name="author" content="Ruben Rodriguez 2016">
+        <meta charset = "UTF-8">
+        <link rel="stylesheet" href="css/style.css">		<!--RUTA-->
+    </head>
+    <body>
+        <a href="index.html"><h1 id = "encabezado">Kenken</h1></a>
+        <h2 id = "subencabezado">Página para carga de revoltigramas...</h2>
+        <ul id = "menu">
+            <li><a href="index.html">Principal</a></li>		<!--RUTA-->
+            <li><a href="upload.html">Cargar kenken</a></li>		<!--RUTA-->
+            <li><a href="cgi-bin/list.cgi">Pasatiempos disponibles</a></li>		<!--RUTA-->
+        </ul>
+        <div id = "contenido">
+            <br>
+            <br>
+            <form id = "input" method='POST' enctype='multipart/form-data' action='cgi-bin/upload.cgi'>		<!--RUTA-->
+                Subir .xml que contenga un solitario kenken:
+                <input id = "input" type=file name=upfile><br>
+                Pulsa <input type=submit value=Click> para subir el archivo!
+            </form>
+        </div>
+        <footer id = "foot">
+            <address>
+                Written by <a href="mailto:rrodrc04@estudiantes.unileon.es">Ruben Rodriguez</a><br>
+            </address>
+            © 2016
+        </footer>
+    </body>
+</html>
